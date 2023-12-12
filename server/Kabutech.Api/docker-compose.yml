@@ -1,0 +1,48 @@
+﻿services:
+  kabutech-db:
+    hostname: kabutech-db
+    image: mongo
+    expose:
+      - 27017
+    ports:
+      - 5130:27017
+    volumes:
+      - kabutech-data:/data/db
+    networks:
+      kabutech_net:
+        ipv4_address: 15.1.0.1
+    restart: always
+    command: mongod --replSet kabutech-set --bind_ip  15.1.0.1
+  kabutech-init:
+    image: mongo
+    restart: 'no'
+    depends_on:
+      - kabutech-db
+    networks:
+      kabutech_net:
+        ipv4_address: 15.1.0.2
+    command: >
+      mongosh --host kabutech-db:27017 --eval
+      '
+      db = (new Mongo("15.1.0.1:27017")).getDB("admin");
+      config = {
+      "_id" : "kabutech-set",
+      "members" : [
+        {
+          "_id" : 0,
+          "host" : "kabutech-db:27017"
+        }
+      ]
+      };
+      rs.initiate(config);
+      '
+volumes:
+  kabutech-data:
+
+networks:
+  kabutech_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 15.1.0.0/24
+          gateway: 15.1.0.254

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabutech.Api", "Kabutech.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabutech.Analyzer", "Kabutech.Analyzer\Kabutech.Analyzer.csproj", "{A70DB9DB-8A7B-4E33-AC33-9D34432983B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabutech.Api.Generator", "Kabutech.Api.Generator\Kabutech.Api.Generator.csproj", "{FB58466A-8F50-49B7-8D97-B071C9F7A871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabutech.Source.Generator", "Kabutech.Source.Generator\Kabutech.Source.Generator.csproj", "{06DDF851-985B-4B02-9634-C35CB2340DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A70DB9DB-8A7B-4E33-AC33-9D34432983B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70DB9DB-8A7B-4E33-AC33-9D34432983B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70DB9DB-8A7B-4E33-AC33-9D34432983B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB58466A-8F50-49B7-8D97-B071C9F7A871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB58466A-8F50-49B7-8D97-B071C9F7A871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB58466A-8F50-49B7-8D97-B071C9F7A871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB58466A-8F50-49B7-8D97-B071C9F7A871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DDF851-985B-4B02-9634-C35CB2340DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DDF851-985B-4B02-9634-C35CB2340DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DDF851-985B-4B02-9634-C35CB2340DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DDF851-985B-4B02-9634-C35CB2340DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
