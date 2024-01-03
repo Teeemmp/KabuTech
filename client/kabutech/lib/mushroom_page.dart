@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kabutech/base.dart';
 
 class MushroomPage extends StatelessWidget {
   const MushroomPage({super.key, required this.title});
@@ -7,21 +8,18 @@ class MushroomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Base(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () => {Navigator.pop(context)},
-          icon: const Icon(Icons.chevron_left),
+          icon: const Icon(Icons.chevron_left, color: Colors.white),
         ),
         title: Text(title),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('This is where the add or edit mushroom will go'),
-          ],
+      child: const SingleChildScrollView(
+        child: Center(
+          child: Text('This is where the add or edit mushroom will go'),
         ),
       ),
     );

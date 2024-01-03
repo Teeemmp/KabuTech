@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:kabutech/base.dart';
 
 class InfoPage extends StatelessWidget {
-  const InfoPage({super.key, required this.title});
-
-  final String title;
+  const InfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final theme = Theme.of(context);
+    return Base(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () => {Navigator.pop(context)},
-          icon: const Icon(Icons.chevron_left),
+          icon: const Icon(Icons.chevron_left, color: Colors.white),
         ),
-        title: Text(title),
+        title: const Text("App info"),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('This is where the app info will go'),
-          ],
+      child: SingleChildScrollView(
+        child: Center(
+          child: Text(
+            'This is where the app info will go',
+            style: theme.textTheme.labelLarge,
+          ),
         ),
       ),
     );
